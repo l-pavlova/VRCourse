@@ -30,5 +30,6 @@ scene.add(cube);
 
 
 camera.position.z = 5;
+renderer.render(scene, camera);
 ```
 for animation we use requestAnimationFrame and use basically the speed provided by our graphic card
