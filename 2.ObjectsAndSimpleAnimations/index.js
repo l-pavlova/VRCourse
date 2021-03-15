@@ -10,7 +10,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.PlaneGeometry(5,5,5);
+const geometry = new THREE.BoxGeometry(0.5,5,5);
+
+const cgeometry = new THREE.CylinderGeometry( 1, 5, 20, 32 );
+
 const geometryInner = new THREE.PlaneGeometry(1,1,5);
 
 const material = new THREE.MeshBasicMaterial({color:0xfff000, side: THREE.DoubleSide});
@@ -20,15 +23,19 @@ const plane = new THREE.Mesh(geometry, material);
 const plane1 = new THREE.Mesh(geometryInner, material1);
 
 renderer.render(scene, camera);
+const cylinder = new THREE.Mesh( cgeometry, material );
+const group = new THREE.Group();
+group.add( cylinder );
+group.add( plane );
 
-scene.add(plane);
+scene.add( group );
+
 //scene.add(plane1);
 camera.position.z = 15;
 const animate = () => {
     requestAnimationFrame(animate);
-    plane.rotation.x +=0.01;
-    plane.rotation.y +=0.02;
-    plane1.rotation.x +=0.01;
+group.rotation.x +=0.01;
+group.rotation.y +=0.02;
     
     renderer.render(scene, camera);
 }
