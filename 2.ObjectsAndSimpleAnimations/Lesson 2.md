@@ -10,7 +10,7 @@ When it's in browser its the tact frequency of screen refresh
 stats.js measures spreed by frames per second and miliseconds per frame
 
 ### Geometries:
-declaration like: 
+initialized like: 
 
 ```const geom = new THREE.BoxGeometry(1,1,1);```
 
@@ -34,4 +34,5 @@ group.add(body);
 First we set the position like so, can be set individually or for all in the group:
 body.position.set(0,0,10);//sets xyz coordinates in the three dimensional space
 Then, we do not set the rotation of the elements one by one but of the whole group:
+
  ``` group.rotation.set(0, MATH.PI/2, 0); ```
