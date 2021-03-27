@@ -87,11 +87,9 @@ function animate() {
 	/*s.set( 150, 1.2*t+1, 2*Math.sin(t) );
 				light.position.setFromSpherical( s );
 				
-				// втора светлина - също се върти
 				s.set( 150, -1.5*t+2, Math.sin(t+1) );
 				light2.position.setFromSpherical( s );
 				
-				// трета светлина - и тя не остава назад
 				s.set( 150, 1.7*t+3, Math.sin(t-1) );
 				light3.position.setFromSpherical( s );*/
 	//teapotA.rotation.set( 1.2*Math.sin(t), t, 1.2*Math.cos(t/2) );
