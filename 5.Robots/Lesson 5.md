@@ -32,6 +32,8 @@ Not always the dimensions of the reachable plane matches the DOF.
 - Scharnier - invisible part, the joint basically. Can achieve up to 3 DOF
 - Movement: direct(pointing exact position at all times) or through interpolation(setting only the main positions and interpolating the rest from them, controls speed easier, saves describing the movement)
 
+## Gimbal lock - having DOFs repeat themselves. avoided with movement with quaternions //.set(0,1,0,0)
+
 
 
 
