@@ -1,4 +1,4 @@
-# VRCourse
+# VR for dummies
 A repository for the VR uni course
 - Legend:
 - Lesson 1: [Creating a scene](https://github.com/l-pavlova/VRCourse/blob/master/1.BuidlingASceneRotatingACube/Lesson%201.md)
