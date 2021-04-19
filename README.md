@@ -6,4 +6,4 @@ A repository for the VR uni course
 - Lesson 3: [Materials](https://github.com/l-pavlova/VRCourse/blob/master/3.Materials/Lesson3.md) 
 - Lesson 4: [Animation](https://github.com/l-pavlova/VRCourse/blob/master/4.Animation/Lesson4.md)
 - Lesson 5: [Robots](https://github.com/l-pavlova/VRCourse/blob/master/5.Robots/Lesson%205.md)
-- Lesson 6: [Physics]
+- Lesson 6: [Physics](https://github.com/l-pavlova/VRCourse/blob/master/6.Physics/Lesson6.md)
