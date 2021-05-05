@@ -1,12 +1,11 @@
-getLocation();
-function getLocation() {
+(function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(geoSuccess);
     }
     else {
         result.innerHTML = "Браузърът не поддържа геолокация.";
     }
-}
+})();
 
 
 function geoSuccess(position) {

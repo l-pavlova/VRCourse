@@ -7,8 +7,8 @@ A repository for the VR uni course
 - Lesson 4: [Animation](https://github.com/l-pavlova/VRCourse/blob/master/4.Animation/Lesson4.md)
 - Lesson 5: [Robots](https://github.com/l-pavlova/VRCourse/blob/master/5.Robots/Lesson%205.md)
 - Lesson 6: [Physics](https://github.com/l-pavlova/VRCourse/blob/master/6.Physics/Lesson6.md)
-- Lesson 7: [Stereo] (https://github.com/l-pavlova/VRCourse/blob/master/7&8.Stereo/Lesson7.md)
-- Lesson 9: [Positioning] (https://github.com/l-pavlova/VRCourse/blob/master/9.Positioning/Lesson9.md)
+- Lesson 7: [Stereo](https://github.com/l-pavlova/VRCourse/blob/master/7&8.Stereo/Lesson7.md)
+- Lesson 9: [Positioning](https://github.com/l-pavlova/VRCourse/blob/master/9.Positioning/Lesson9.md)
 
 
 
