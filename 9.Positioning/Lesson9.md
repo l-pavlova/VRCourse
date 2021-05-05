@@ -30,6 +30,8 @@ function geoSuccess(position) {
     position.coords.longitude
     position.coords.latitude
     position.coords.accuracy
+
+    position.heading;//shows direction
 }
 ```
 if it's not working, the user didn't give consent for accessing his location or javascript is disabled with a <noscript> tag or god knows what really

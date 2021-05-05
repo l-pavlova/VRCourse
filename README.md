@@ -7,9 +7,12 @@ A repository for the VR uni course
 - Lesson 4: [Animation](https://github.com/l-pavlova/VRCourse/blob/master/4.Animation/Lesson4.md)
 - Lesson 5: [Robots](https://github.com/l-pavlova/VRCourse/blob/master/5.Robots/Lesson%205.md)
 - Lesson 6: [Physics](https://github.com/l-pavlova/VRCourse/blob/master/6.Physics/Lesson6.md)
-- Lesson 7:
+- Lesson 7: [Stereo] (https://github.com/l-pavlova/VRCourse/blob/master/7&8.Stereo/Lesson7.md)
+- Lesson 9: [Positioning] (https://github.com/l-pavlova/VRCourse/blob/master/9.Positioning/Lesson9.md)
 
 
 
 # Examples
-- Stackoverflow with dice [Dice](https://l-pavlova.github.io/VRCourse/Homework_2/index.html?fbclid=IwAR1tIwf0LIVcbNEUls9IYzESN9nQq2QlqmK0qlFcIasjBuslcrggmwyC6Ew)
+- Catch a ball(with a robot with DOF = 2) [Catch](https://l-pavlova.github.io/VRCourse/Test_2/nnnnn/Solution.html)
+- Stackoverflow with dice [Dice](https://l-pavlova.github.io/VRCourse/Homework_2/)
+- Graveyard [Yard](https://l-pavlova.github.io/VRCourse/Test_3_GraveYard/)
