@@ -35,8 +35,10 @@ function handleMotion(deviceMotionEvent) {
         el.innerText = "You have been here for " + seconds + " seconds.";
         if(seconds% timeTrack === 0){
             console.log('step!');
+            document.body.innerHTML = "";
             steps++;
             document.getElementById('steps').innerHTML =steps;
+            window.clear
         }
     }
     
