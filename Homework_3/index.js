@@ -3,7 +3,7 @@ vaxInitParallax();
 let data = {
     alpha: 50,
     beta: 25,
-    gamma: 50,
+    gamma: 90,
 };
 const radius = 100;
 
@@ -23,6 +23,8 @@ plane.rotation.x = Math.PI / 2;
 //scene.add(plane);
 scene.add(box);
 
+let time = 0,
+    oldTime = 0;
 
 window.addEventListener("deviceorientation", deviceOrientation, true);
 
@@ -32,15 +34,21 @@ function deviceOrientation(event) {
     data.beta = event.beta;//THREE.Math.degToRad( event.beta ),
     data.gamma = event.gamma;//THREE.Math.degToRad( event.gamma );
 }
+camera.position.set(0, 0, 0);
 
 //todo: add cones
 function animate() {
 
-    scene.simulate(1 / 50);
-    camera.position.set(0, 0, 0);
-    
-    camera.rotation.x = data.alpha;
-    camera.rotation.y = data.beta;
-    camera.rotation.z = 0;//data.gamma;
-    camera.updateMatrixWorld();
+    time = Date.now();
+    if(time - oldTime > 100)
+    {
+        camera.rotation.x = data.alpha;
+        camera.rotation.y = data.beta;
+        camera.rotation.z = -90;
+        oldTime = time;//set camera orientation face us
+       // camera.updateMatrixWorld();
+    }
+    //scene.simulate(1 / 50);
+
+   
 }
