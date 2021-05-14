@@ -7,7 +7,7 @@ let data = {
 };
 const radius = 100;
 
-const boxGeom = new THREE.BoxBufferGeometry(200, 200, 200);
+const boxGeom = new THREE.BoxBufferGeometry(400, 400, 400);
 const planeG = new THREE.BoxBufferGeometry(1000, 1000, 1);
 const material = new THREE.MeshNormalMaterial({
     transparent: true,
@@ -45,5 +45,5 @@ function animate() {
     let x = radius * Math.sin(phi) * Math.cos(theta);
     let y = radius * Math.cos(phi);
     let z = radius * Math.sin(phi) * Math.sin(theta);
-    camera.lookAt(new THREE.Vector3(x,y,z))
+    camera.lookAt(new THREE.Vector3(data.alpha,data.beta,data.gamma))
 }
