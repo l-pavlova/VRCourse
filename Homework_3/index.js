@@ -7,7 +7,7 @@ let data = {
 };
 const radius = 100;
 
-const boxGeom = new THREE.BoxBufferGeometry(100, 100, 100);
+const boxGeom = new THREE.BoxBufferGeometry(200, 200, 200);
 const planeG = new THREE.BoxBufferGeometry(1000, 1000, 1);
 const material = new THREE.MeshNormalMaterial({
     transparent: true,
@@ -22,7 +22,7 @@ plane.rotation.x = Math.PI / 2;
 
 //scene.add(plane);
 scene.add(box);
-
+const dragFactor=0.2;
 let time = 0,
     oldTime = 0;
 
@@ -39,16 +39,11 @@ camera.position.set(0, 0, 0);
 //todo: add cones
 function animate() {
 
-    time = Date.now();
-    if(time - oldTime > 100)
-    {
-        camera.rotation.x = data.alpha;
-        camera.rotation.y = data.beta;
-        camera.rotation.z = -90;
-        oldTime = time;//set camera orientation face us
-       // camera.updateMatrixWorld();
-    }
-    //scene.simulate(1 / 50);
+    const phi = THREE.Math.degToRad(90 - data.alpha);
+    const theta = THREE.Math.degToRad(data.beta);
 
-   
+    let x = radius * Math.sin(phi) * Math.cos(theta);
+    let y = radius * Math.cos(phi);
+    let z = radius * Math.sin(phi) * Math.sin(theta);
+    camera.lookAt(new THREE.Vector3(x,y,z))
 }
