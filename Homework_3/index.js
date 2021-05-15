@@ -48,7 +48,7 @@ function deviceOrientation(event) {
     let y = radius * Math.cos(phi);
     let z = radius * Math.sin(phi) * Math.sin(theta);
     if(time > oldTime+50) {
-        camera.lookAt(new THREE.Vector3(x, y,z))//todo: figure out how to make them normalized
+        camera.lookAt(new THREE.Vector3(phi, theta,THREE.Math.degToRad(data.gamma)))//todo: figure out how to make them normalized
         oldTime = time;
     }
 }
