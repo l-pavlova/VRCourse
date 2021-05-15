@@ -1,5 +1,5 @@
 vaxInitParallax();
-
+camera.position.set(0, 0, 0);
 let data = {
     alpha: 50,
     beta: 25,
@@ -52,26 +52,26 @@ function deviceOrientation(event) {
          oldTime = time;
      }*/
 
-    var alpha = event.alpha,
+    var beta= event.beta,
         gamma = event.gamma;
 
-    if (alpha === null) return;
+    if (beta === null) return;
 
     // поправяме ги, за да ни е удобно
     if (gamma >= 0)
         gamma = 90 - gamma;
     else {
-        alpha = alpha + 180;
+        beta = beta + 180;
         gamma = -90 - gamma;
     }
 
     // правим ги на радиани
-    alpha = THREE.Math.degToRad(alpha);
+    beta = THREE.Math.degToRad(beta);
     gamma = THREE.Math.degToRad(gamma);
 
     // въртим камерата
-    camera.rotation.set(gamma, alpha, 0, 'YZX');
+    camera.rotation.set(gamma, beta, 0, 'YXZ');
 }
-camera.position.set(0, 0, 0);
+//camera.position.set(0, 0, 0);
 
 //todo: add cones
