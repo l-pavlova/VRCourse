@@ -8,9 +8,9 @@ let data = {
 };
 const radius = 100;
 
-const boxGeom = new THREE.BoxBufferGeometry(400, 400, 400);
+const boxGeom = new THREE.BoxBufferGeometry(800, 800, 800);
 const planeG = new THREE.BoxBufferGeometry(1000, 1000, 1);
-const coneG = new THREE.CylinderGeometry(1, 10, 10, 32);
+const coneG = new THREE.CylinderGeometry(1, 10, 30, 32);
 
 const boxTexture = new THREE.TextureLoader().load("textures/starts.jpg");
 boxTexture.wrapS = THREE.RepeatWrapping;
@@ -18,19 +18,25 @@ boxTexture.wrapT = THREE.RepeatWrapping;
 boxTexture.repeat.set(1, 1);
 
 const material = new THREE.MeshBasicMaterial({
-    map:boxTexture,
+    map: boxTexture,
     side: THREE.DoubleSide
 });
 
-const coneMaterial = new THREE.MeshBasicMaterial({ color: "red" });
-
 const box = new THREE.Mesh(boxGeom, material);
 
-for (let i = 0; i < 100; i++) {
-    let cone = new THREE.Mesh(coneG, coneMaterial);
-    cone.position.x += i * 100;
-}
 scene.add(box);
+
+for (let i = 0; i < 500; i++) {
+    const coneMaterial = new THREE.MeshBasicMaterial({ color: THREE.Math.randInt(0, 0xFFFFFF)});
+    const cone = new THREE.Mesh(coneG, coneMaterial);
+
+    const r = 390;//so they are inside the cube
+        a = THREE.Math.randFloat(0, 2 * Math.PI),
+        b = THREE.Math.randFloat(0, Math.PI);
+    cone.position.setFromSphericalCoords(r, b, a);
+
+    scene.add(cone);
+}
 
 window.addEventListener("deviceorientation", deviceOrientation, true);
 function deviceOrientation(event) {
@@ -52,5 +58,3 @@ function deviceOrientation(event) {
 
     camera.rotation.set(gamma, alpha, 0, 'YZX');
 }
-
-//todo: add cones

@@ -93,5 +93,10 @@ var material = new THREE.MeshPhongMaterial( {
 } );
 ```
 
+
+!!!NB To generate a material with a rand color:
+```
+ const coneMaterial = new THREE.MeshBasicMaterial({ color: THREE.Math.randInt(0, 0xFFFFFF)
+```
 # Cameras 
 idk
