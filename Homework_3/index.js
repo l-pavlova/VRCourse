@@ -1,4 +1,5 @@
-vaxInitParallax();
+vaxInit({ antialias: true, alpha: true });
+//vaxInitParallax();
 camera.position.set(0, 0, 0);
 let data = {
     alpha: 50,
@@ -34,7 +35,6 @@ let time = 0,
     oldTime = 0;
 
 window.addEventListener("deviceorientation", deviceOrientation, true);
-
 function deviceOrientation(event) {
 
     /* data.alpha = event.alpha;//THREE.Math.degToRad( event.alpha ),
@@ -52,25 +52,25 @@ function deviceOrientation(event) {
          oldTime = time;
      }*/
 
-    var beta= event.beta,
+    var alpha = event.alpha,
         gamma = event.gamma;
 
-    if (beta === null) return;
+    if (alpha === null) return;
 
     // поправяме ги, за да ни е удобно
     if (gamma >= 0)
         gamma = 90 - gamma;
     else {
-        beta = beta + 180;
+        alpha = alpha + 180;
         gamma = -90 - gamma;
     }
 
     // правим ги на радиани
-    beta = THREE.Math.degToRad(beta);
+    alpha = THREE.Math.degToRad(alpha);
     gamma = THREE.Math.degToRad(gamma);
 
     // въртим камерата
-    camera.rotation.set(gamma, beta, 0, 'YXZ');
+    camera.rotation.set(gamma, alpha, 0, 'YZX');
 }
 //camera.position.set(0, 0, 0);
 
