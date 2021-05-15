@@ -41,7 +41,7 @@ function deviceOrientation(event) {
     data.beta = event.beta;//THREE.Math.degToRad( event.beta ),
     data.gamma = event.gamma;//THREE.Math.degToRad( event.gamma );
     time = Date.now();
-    const phi = THREE.Math.degToRad(90 - data.alpha);
+    const phi = THREE.Math.degToRad(data.alpha);
     const theta = THREE.Math.degToRad(data.beta);
 
     let x = radius * Math.sin(phi) * Math.cos(theta);
