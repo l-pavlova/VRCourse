@@ -36,22 +36,29 @@ for (let i = 0; i < 500; i++) {
 
     scene.add(cone);
 }
-
+let time = 0,
+    oldTime = 0;
 window.addEventListener("deviceorientation", (event) => {
-    let alpha = event.alpha,
-        gamma = event.gamma;
 
-    if (alpha === null) return;
+    time = Date.now();
+    if (time > oldTime + 50) {
+        oldTime = time;
+        let alpha = event.alpha,
+            gamma = event.gamma;
 
-    if (gamma >= 0) {
-        gamma = 90 - gamma;
-    } else {
-        alpha = alpha + 180;
-        gamma = -90 - gamma;
+        if (alpha === null) return;
+
+        if (gamma >= 0) {
+            gamma = 90 - gamma;
+        } else {
+            alpha = alpha + 180;
+            gamma = -90 - gamma;
+        }
+
+        alpha = THREE.Math.degToRad(alpha);
+        gamma = THREE.Math.degToRad(gamma);
+
+        camera.rotation.set(gamma, alpha, 0, 'YZX');
     }
 
-    alpha = THREE.Math.degToRad(alpha);
-    gamma = THREE.Math.degToRad(gamma);
-
-    camera.rotation.set(gamma, alpha, 0, 'YZX');
 }, true);
