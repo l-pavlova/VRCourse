@@ -1,0 +1,3 @@
+# Textures
+
+#Equidistant, Equirectangular
