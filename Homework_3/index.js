@@ -45,5 +45,5 @@ function animate() {
     let x = radius * Math.sin(phi) * Math.cos(theta);
     let y = radius * Math.cos(phi);
     let z = radius * Math.sin(phi) * Math.sin(theta);
-    camera.lookAt(new THREE.Vector3(data.alpha,data.beta,data.gamma))
+    camera.lookAt(new THREE.Vector3(x, y,z))//todo: figure out how to make them normalized
 }
