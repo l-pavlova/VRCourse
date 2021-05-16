@@ -1,5 +1,9 @@
 vaxInitParallax({ antialias: true, alpha: true });
 camera.position.set(0, 0, 0);
+camera.fov = 25;
+camera.near = 400;
+camera.far = 3000;
+
 let data = {
     alpha: 50,
     beta: 25,
@@ -36,6 +40,7 @@ for (let i = 0; i < 500; i++) {
 
     scene.add(cone);
 }
+
 let time = 0,
     oldTime = 0;
 window.addEventListener("deviceorientation", (event) => {
