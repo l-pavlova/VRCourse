@@ -48,9 +48,6 @@ let time = 0,
 
 window.addEventListener("deviceorientation", (event) => {
 
-    time = Date.now();//to try to remove shivering, take new angles at an interval of 50 miliseconds
-  //  if (time > oldTime + 50) {
-        oldTime = time;
         let alpha = event.alpha,
             gamma = event.gamma;
 
@@ -67,7 +64,6 @@ window.addEventListener("deviceorientation", (event) => {
         gamma = THREE.Math.degToRad(gamma);
 
         camera.rotation.set(gamma, alpha, 0, 'YZX');
-//    }
 
 }, true);
 
