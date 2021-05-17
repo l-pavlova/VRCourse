@@ -14,7 +14,12 @@ scene.add(thirdLight);
 camera.fov = 25;
 camera.near = 400;
 camera.far = 3000;
-document.getElementsByClassName('canvas')[0].requestFullscreen();
+
+var gyroPresent = false;
+window.addEventListener("devicemotion", function(event){
+    if(event.rotationRate.alpha || event.rotationRate.beta || event.rotationRate.gamma)
+        gyroPresent = true;
+});
 
 const crystalGeom = new THREE.OctahedronGeometry(20, 1);
 
@@ -66,9 +71,27 @@ window.addEventListener("deviceorientation", (event) => {
     camera.rotation.set(gamma, alpha, 0, 'YZX');
 }, true);
 
+
+
+if(!gyroPresent) {
+    camera.fov = 30;
+    onWindowResize();
+
+    var controls = new THREE.OrbitControls( camera, renderer.domElement );
+        controls.enableZoom = false;
+        controls.enablePan = false;
+        controls.enableDamping = true;
+        controls.minPolarAngle = 0.1;
+        controls.maxPolarAngle = Math.PI - 0.1;
+        controls.dampingFactor = 0.1;
+}
+
 function animate() {
     for (let i = 0; i < 100; i++)
         crystals[i].rotation.y = t + i;
 
-    // controls.update();
+        if(!gyroPresent){
+            controls.update();
+        }
+    // 
 }

@@ -7,7 +7,7 @@ camera.far = 3000;
 const boxSize = 1200;
 
 const boxGeom = new THREE.BoxBufferGeometry(boxSize, boxSize, boxSize);
-const coneG = new THREE.CylinderGeometry(1, 20, 40, 42);
+const coneG = new THREE.CylinderGeometry(1, 15, 50, 42);
 
 const boxTexture = new THREE.TextureLoader().load("textures/texture.jpg");
 boxTexture.wrapS = THREE.RepeatWrapping;
@@ -22,6 +22,7 @@ const material = new THREE.MeshBasicMaterial({
 const box = new THREE.Mesh(boxGeom, material);
 
 scene.add(box);
+
 //generate cones inside the cube
 for (let i = 0; i < 500; i++) {
     const coneMaterial = new THREE.MeshBasicMaterial({ color: THREE.Math.randInt(0, 0xFFFFFF) });
@@ -37,6 +38,7 @@ for (let i = 0; i < 500; i++) {
 
 let time = 0,
     oldTime = 0;
+
 window.addEventListener("deviceorientation", (event) => {
 
     let alpha = event.alpha,
