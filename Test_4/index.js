@@ -14,6 +14,7 @@ scene.add(thirdLight);
 camera.fov = 25;
 camera.near = 400;
 camera.far = 3000;
+document.getElementsByClassName('canvas')[0].requestFullscreen();
 
 const crystalGeom = new THREE.OctahedronGeometry(20, 1);
 
@@ -36,7 +37,7 @@ const crystals = [];
 for (let i = 0; i < 300; i++) {
     const crystal = new THREE.Mesh(crystalGeom, crystalMaterial);
 
-    const r = THREE.Math.randFloat(600, 1000);  //so they are inside the cube
+    const r = THREE.Math.randFloat(600, 1000);
     a = THREE.Math.randFloat(0, 2 * Math.PI),
         b = THREE.Math.randFloat(0, Math.PI);
     crystal.position.setFromSphericalCoords(r, b, a);
@@ -47,36 +48,24 @@ let time = 0,
     oldTime = 0;
 
 window.addEventListener("deviceorientation", (event) => {
+    let alpha = event.alpha,
+        gamma = event.gamma;
 
-        let alpha = event.alpha,
-            gamma = event.gamma;
+    if (alpha === null) return;
 
-        if (alpha === null) return;
+    if (gamma >= 0) {
+        gamma = 90 - gamma;
+    } else {
+        alpha = alpha + 180;
+        gamma = -90 - gamma;
+    }
 
-        if (gamma >= 0) {
-            gamma = 90 - gamma;
-        } else {
-            alpha = alpha + 180;
-            gamma = -90 - gamma;
-        }
+    alpha = THREE.Math.degToRad(alpha);
+    gamma = THREE.Math.degToRad(gamma);
 
-        alpha = THREE.Math.degToRad(alpha);
-        gamma = THREE.Math.degToRad(gamma);
-
-        camera.rotation.set(gamma, alpha, 0, 'YZX');
-
+    camera.rotation.set(gamma, alpha, 0, 'YZX');
 }, true);
 
-/*onWindowResize();
-
-var controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enableZoom = false;
-controls.enablePan = false;
-controls.enableDamping = true;
-controls.minPolarAngle = 0.1;
-controls.maxPolarAngle = Math.PI - 0.1;
-controls.dampingFactor = 0.1;
-*/
 function animate() {
     for (let i = 0; i < 100; i++)
         crystals[i].rotation.y = t + i;
