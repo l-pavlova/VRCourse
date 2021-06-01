@@ -11,7 +11,7 @@ A repository for the VR uni course
 - Lesson 9: [Positioning](https://github.com/l-pavlova/VRCourse/blob/master/9.Positioning/Lesson9.md)
 - Lesson 10: [Camera](https://github.com/l-pavlova/VRCourse/blob/master/10.Camera/Lesson10.md)
 - Lesson 11: [Textures](https://github.com/l-pavlova/VRCourse/blob/master/11.Textures/Lesson11.md)
-
+- Lesson 12: [Skeletons](https://github.com/l-pavlova/VRCourse/blob/master/12.Skeletons%26Skins/Lesson12.md)
 
 
 # Examples
@@ -20,3 +20,4 @@ A repository for the VR uni course
 - Graveyard [Yard](https://l-pavlova.github.io/VRCourse/Test_3_GraveYard/)
 - Cube with cones(for phone, or to view it enable the custom orientation in sensors tab) [Cube](https://l-pavlova.github.io/VRCourse/Homework_3/)
 - Scene with space crystals [CrystalInvaders](https://l-pavlova.github.io/VRCourse/Test_4/)
+- A runny boi [SkeletonRunner](https://l-pavlova.github.io/VRCourse/Homework_4/)
